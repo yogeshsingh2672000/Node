@@ -1,10 +1,11 @@
 const EventEmitter = require("events"); // this is a class
-const emitter = new EventEmitter();
+
+const Logger = require("./logger");
+const logger = new Logger();
 
 // registering the Listner
-emitter.on("messageLogged", function () {
-  console.log("Listner Called");
+logger.on("messageLogged", (args) => {
+  console.log(`Logging in.... ${args.username} (${args.name})`);
 });
 
-// Raise an event
-emitter.emit("messageLogged");
+logger.log("message");
