@@ -1,5 +1,4 @@
-var say_hello = function () {};
+// loading module
+const logger = require("./logger");
 
-window.say_hello();
-// avoid declaring this type of function because this is global now with var
-// the problem is when we call this function in another module/file then that function with same name will overried this function and we dont want that
+logger.log("message");
