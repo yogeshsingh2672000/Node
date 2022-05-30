@@ -1,11 +1,13 @@
-const EventEmitter = require("events"); // this is a class
+const { Socket } = require("dgram");
+const http = require("http");
 
-const Logger = require("./logger");
-const logger = new Logger();
-
-// registering the Listner
-logger.on("messageLogged", (args) => {
-  console.log(`Logging in.... ${args.username} (${args.name})`);
+const server = http.createServer((req, res) => {
+  if (res.url == "/") {
+    res.write("Hello World");
+    res.end();
+  }
 });
 
-logger.log("message");
+server.listen(5510);
+
+console.log("Listening on port 5510");
