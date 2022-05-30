@@ -1,5 +1,3 @@
-function say_hello(name) {
-  console.log("hello " + name);
-}
+var message = "sadf";
 
-say_hello("Yogesh");
+global.console.log(message);
