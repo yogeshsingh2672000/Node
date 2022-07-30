@@ -1,4 +1,4 @@
-<p sytle="text-align: center;">Learning Structure</p>
+<center># Learning Structure<center>
 
 ## Node Module System
 
