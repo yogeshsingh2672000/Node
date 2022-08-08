@@ -1,10 +1,20 @@
-const fs = require("fs");
+const express = require("express");
 const path = require("path");
 
-const dirPath = path.join(__dirname, "crud");
-const filePath = `${dirPath}/apple.txt`;
+const publicPath = path.join(__dirname, "public");
 
-// fs.writeFileSync(filePath, "this is a first file created using file handling");
-fs.readFile(filePath, "utf8", (err, items) => {
-  console.log(items);
+const app = express();
+// app.use(express.static(publicPath));
+app.get("", (_, res) => {
+  res.sendFile(`${publicPath}/home.html`);
 });
+
+app.get("/about", (_, res) => {
+  res.sendFile(`${publicPath}/about.html`);
+});
+
+app.get("*", (_, res) => {
+  res.send("this page is not found go to home page");
+});
+
+app.listen(4500);
