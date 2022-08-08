@@ -1,10 +1,10 @@
-const http = require("http");
+const fs = require("fs");
+const path = require("path");
 
-console.log("server running");
-http
-  .createServer((req, res) => {
-    var output = "<h1>Hello Yogesh</h1>";
-    res.write(output);
-    res.end();
-  })
-  .listen(4500);
+const dirPath = path.join(__dirname, "crud");
+const filePath = `${dirPath}/apple.txt`;
+
+// fs.writeFileSync(filePath, "this is a first file created using file handling");
+fs.readFile(filePath, "utf8", (err, items) => {
+  console.log(items);
+});
