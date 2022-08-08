@@ -1,5 +1,7 @@
 # Learning Structure
 
+## video link : https://www.youtube.com/watch?v=VrQgmNY96wo&t=6461s
+
 ###### 0. 00:00​ What si Node js and course Introduction
 
 ###### 1. 08:31​ Basic theory of node js
