@@ -1,20 +1,24 @@
 const express = require("express");
-const path = require("path");
-
-const publicPath = path.join(__dirname, "public");
-
 const app = express();
-// app.use(express.static(publicPath));
-app.get("", (_, res) => {
-  res.sendFile(`${publicPath}/home.html`);
+
+const reqFilter = (req, res, next) => {
+  if (!req.query.age) {
+    res.send("please provide age");
+  } else if (req.query.age < 18) {
+    res.send("you are too young for this website");
+  } else if (req.query.age >= 18) {
+    // res.send("<h1>Welcome</h1>");
+    next();
+  }
+};
+
+app.use(reqFilter);
+app.get("", (req, res) => {
+  res.send("Welcome to Home Page");
 });
 
-app.get("/about", (_, res) => {
-  res.sendFile(`${publicPath}/about.html`);
-});
-
-app.get("*", (_, res) => {
-  res.send("this page is not found go to home page");
+app.get("/users", (req, res) => {
+  res.send("Welcome to Users Page");
 });
 
 app.listen(4500);
