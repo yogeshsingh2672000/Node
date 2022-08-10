@@ -1,6 +1,6 @@
 # Learning Structure
 
-## video link : https://www.youtube.com/watch?v=VrQgmNY96wo&t=6461s
+## video link : [YouTube](https://www.youtube.com/watch?v=VrQgmNY96wo&t=6461s)
 
 ###### 0. 00:00​ What si Node js and course Introduction
 
