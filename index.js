@@ -1,4 +1,4 @@
-const dbConnect = require("./mongo");
+const dbConnect = require("./mongodb");
 
 const main = async () => {
   let data = await dbConnect();
